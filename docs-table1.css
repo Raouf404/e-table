@@ -1,0 +1,188 @@
+/* Global rules */
+:root {
+  --primary-main: #0062FF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-shadow: 0 0 0 3px  tomato inset; */
+}
+body {
+  font-family: 'Open Sans', 'Sans Serif';
+  background-color: #F2F7FF;
+  /* To test sticky table head */
+  height: 2000px;
+}
+
+.container {
+  overflow-x: auto;
+  margin: 0 160px;
+}
+
+/* Table */
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  /* Space between rows */
+  /* border-spacing: 0 16px; */
+  /* Fixing the additionale space the previous line makes */
+  /* margin: -16px 0; */
+  width: 100%;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+}
+
+/* Table row styling */
+tr {
+  display: flex;
+  margin-bottom: 16px; /* replace border spacing and negative margin in table */
+  align-items: center;
+  background-color: #FFF;
+}
+
+tr th, tr td {
+  padding: 16px 0;
+  text-align: left;
+  font-size: 16px;
+  width: calc((100% - 258.25px) / 4);
+  min-width: 205px;
+}
+tr th > svg, tr td > svg {
+  margin-right: 18px;
+}
+
+tr th {
+  text-align: middle;
+  font-weight: 700;
+}
+
+/* Padding doesn't work on tr so had to do this */
+tr th:first-child,
+tr td:first-child {
+  padding-left: 16px;
+}
+tr th:last-child,
+tr td:last-child {
+  padding-right: 16px;
+}
+
+.table-head-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+tr td:first-child {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--primary-main, #0062FF);
+}
+
+/* Buttons */
+/* tr td:last-child {
+  display: flex;
+  justify-content: right;
+} */
+tr th:nth-last-child(2),
+tr td:nth-last-child(2) {
+  width: 170.25px;
+  min-width: 170.25px;
+  position: sticky;
+  right: 88px;
+}
+tr th:last-child,
+tr td:last-child {
+  width: 88px;
+  min-width: 88px;
+  position: sticky;
+  right: 0;
+}
+
+
+tr td:nth-last-child(2) button,
+tr td:last-child button {
+  font-size: 16px;
+  height: 56px;
+  cursor: pointer;
+}
+tr td:nth-last-child(2) .consulter,
+tr td:last-child .consulter {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px 14px 20px;
+  margin-right: 16px;
+  height: 56px;
+  background-color: #FFFFFF;
+  border: 2px solid var(--primary-main, #0062FF);
+
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  color: var(--primary-main, #0062FF);
+  font-size: 16px;
+  font-weight: 700;
+
+  transition: 0.16s;
+  -webkit-transition: 0.16s;
+  -moz-transition: 0.16s;
+  -ms-transition: 0.16s;
+  -o-transition: 0.16s;
+}
+tr td:nth-last-child(2) .consulter:hover,
+tr td:last-child .consulter:hover {
+  background-color: var(--primary-main, #0062FF);
+  color: #FFF;
+}
+
+tr td:nth-last-child(2) .consulter svg,
+tr td:last-child .consulter svg {
+  fill: #0062FF;
+  margin-right: 8px;
+
+  transition: 0.16s;
+  -webkit-transition: 0.16s;
+  -moz-transition: 0.16s;
+  -ms-transition: 0.16s;
+  -o-transition: 0.16s;
+}
+tr td:nth-last-child(2) .consulter:hover svg,
+tr td:last-child .consulter:hover svg {
+  fill: #FFF;
+}
+tr td:nth-last-child(2) .telecharger,
+tr td:last-child .telecharger {
+  padding: 16px 24px;
+  background-color: var(--primary-main, #0062FF);
+  border: none;
+
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+
+  transition: 0.16s;
+  -webkit-transition: 0.16s;
+  -moz-transition: 0.16s;
+  -ms-transition: 0.16s;
+  -o-transition: 0.16s;
+}
+tr td:nth-last-child(2) .telecharger:hover,
+tr td:last-child .telecharger:hover {
+  background-color: #FFF;
+}
+tr td:nth-last-child(2) .telecharger svg,
+tr td:last-child .telecharger svg {
+  fill: #FFF;
+}
+tr td:nth-last-child(2) .telecharger:hover svg,
+tr td:last-child .telecharger:hover svg {
+  fill: #0062FF;
+}
